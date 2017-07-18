@@ -7,63 +7,43 @@ function insertInitial() {
 
     if ($conn->connect_error) { print "Database Connection Error"; }
 
-    $sql = "INSERT INTO tableA ('name', 'director', 'genre', 'rating') VALUES ('Starwars', 'John Williams', 'Space', '5')";
-    $sql2 = "INSERT INTO tableA ('name', 'director', 'genre', 'rating') VALUES ('Starwars', 'John Williams', 'Space', '5')";
+    $sql = "INSERT INTO tableA (name, director, genre, rating) VALUES ('Starwars', 'John Williams', 'Space', '5')";
+    $sql2 = "INSERT INTO tableb (name, director, genre, rating) VALUES ('Starwars', 'John Williams', 'Space', '5')";
     $conn->query($sql);
     $conn->query($sql2);
 
-    $sql = "INSERT INTO tableA ('name', 'director', 'genre', 'rating') VALUES ('Starwars', 'John Williams', 'Space', '5')";
-    $sql2 = "INSERT INTO tableA ('name', 'director', 'genre', 'rating') VALUES ('Starwars', 'John Williams', 'Space', '5')";
+    $sql = "INSERT INTO tableA (name, director, genre, rating) VALUES ('Starwars', 'John Williams', 'Space', '5')";
+    $sql2 = "INSERT INTO tableb (name, director, genre, rating) VALUES ('Starwars', 'John Williams', 'Space', '5')";
     $conn->query($sql);
     $conn->query($sql2);
 
-    $sql = "INSERT INTO tableA ('name', 'director', 'genre', 'rating') VALUES ('Starwars', 'John Williams', 'Space', '5')";
-    $sql2 = "INSERT INTO tableA ('name', 'director', 'genre', 'rating') VALUES ('Starwars', 'John Williams', 'Space', '5')";
+    $sql = "INSERT INTO tableA (name, director, genre, rating) VALUES ('Starwars', 'John Williams', 'Space', '5')";
+    $sql2 = "INSERT INTO tableb (name, director, genre, rating) VALUES ('Starwars', 'John Williams', 'Space', '5')";
     $conn->query($sql);
     $conn->query($sql2);
 
-    $sql = "INSERT INTO tableA ('name', 'director', 'genre', 'rating') VALUES ('Starwars', 'John Williams', 'Space', '5')";
-    $sql2 = "INSERT INTO tableA ('name', 'director', 'genre', 'rating') VALUES ('Starwars', 'John Williams', 'Space', '5')";
+    $sql = "INSERT INTO tableA (name, director, genre, rating) VALUES ('Starwars', 'John Williams', 'Space', '5')";
+    $sql2 = "INSERT INTO tableb (name, director, genre, rating) VALUES ('Starwars', 'John Williams', 'Space', '5')";
     $conn->query($sql);
     $conn->query($sql2);
 
-    $sql = "INSERT INTO tableA ('name', 'director', 'genre', 'rating') VALUES ('Starwars', 'John Williams', 'Space', '5')";
-    $sql2 = "INSERT INTO tableA ('name', 'director', 'genre', 'rating') VALUES ('Starwars', 'John Williams', 'Space', '5')";
+    $sql = "INSERT INTO tableA (name, director, genre, rating) VALUES ('Starwars', 'John Williams', 'Space', '5')";
+    $sql2 = "INSERT INTO tableb (name, director, genre, rating) VALUES ('Starwars', 'John Williams', 'Space', '5')";
     $conn->query($sql);
     $conn->query($sql2);
 
-    $sql = "INSERT INTO tableA ('name', 'director', 'genre', 'rating') VALUES ('Starwars', 'John Williams', 'Space', '5')";
-    $sql2 = "INSERT INTO tableA ('name', 'director', 'genre', 'rating') VALUES ('Starwars', 'John Williams', 'Space', '5')";
+    $sql = "INSERT INTO tableA (name, director, genre, rating) VALUES ('Starwars', 'John Williams', 'Space', '5')";
+    $sql2 = "INSERT INTO tableb (name, director, genre, rating) VALUES ('Starwars', 'John Williams', 'Space', '5')";
     $conn->query($sql);
     $conn->query($sql2);
 
-    $sql = "INSERT INTO tableA ('name', 'director', 'genre', 'rating') VALUES ('Starwars', 'John Williams', 'Space', '5')";
-    $sql2 = "INSERT INTO tableA ('name', 'director', 'genre', 'rating') VALUES ('Starwars', 'John Williams', 'Space', '5')";
+    $sql = "INSERT INTO tableA (name, director, genre, rating) VALUES ('Starwars', 'John Williams', 'Space', '5')";
+    $sql2 = "INSERT INTO tableb (name, director, genre, rating) VALUES ('Starwars', 'John Williams', 'Space', '5')";
     $conn->query($sql);
     $conn->query($sql2);
 
-    $sql = "INSERT INTO tableA ('name', 'director', 'genre', 'rating') VALUES ('Starwars', 'John Williams', 'Space', '5')";
-    $sql2 = "INSERT INTO tableA ('name', 'director', 'genre', 'rating') VALUES ('Starwars', 'John Williams', 'Space', '5')";
-    $conn->query($sql);
-    $conn->query($sql2);
-
-    $sql = "INSERT INTO tableA ('name', 'director', 'genre', 'rating') VALUES ('Starwars', 'John Williams', 'Space', '5')";
-    $sql2 = "INSERT INTO tableA ('name', 'director', 'genre', 'rating') VALUES ('Starwars', 'John Williams', 'Space', '5')";
-    $conn->query($sql);
-    $conn->query($sql2);
-
-    $sql = "INSERT INTO tableA ('name', 'director', 'genre', 'rating') VALUES ('Starwars', 'John Williams', 'Space', '5')";
-    $sql2 = "INSERT INTO tableA ('name', 'director', 'genre', 'rating') VALUES ('Starwars', 'John Williams', 'Space', '5')";
-    $conn->query($sql);
-    $conn->query($sql2);
-
-    $sql = "INSERT INTO tableA ('name', 'director', 'genre', 'rating') VALUES ('Starwars', 'John Williams', 'Space', '5')";
-    $sql2 = "INSERT INTO tableA ('name', 'director', 'genre', 'rating') VALUES ('Starwars', 'John Williams', 'Space', '5')";
-    $conn->query($sql);
-    $conn->query($sql2);
-
-    $sql = "INSERT INTO tableA ('name', 'director', 'genre', 'rating') VALUES ('Starwars', 'John Williams', 'Space', '5')";
-    $sql2 = "INSERT INTO tableA ('name', 'director', 'genre', 'rating') VALUES ('Starwars', 'John Williams', 'Space', '5')";
+    $sql = "INSERT INTO tableA (name, director, genre, rating) VALUES ('Starwars', 'John Williams', 'Space', '5')";
+    $sql2 = "INSERT INTO tableb (name, director, genre, rating) VALUES ('Starwars', 'John Williams', 'Space', '5')";
     $conn->query($sql);
     $conn->query($sql2);
 
