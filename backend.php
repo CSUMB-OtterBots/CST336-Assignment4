@@ -82,9 +82,6 @@ function getData() {
     $sql = "SELECT * FROM tableA";
     $sql2 = "SELECT * FROM tableb";
 
-    $sql = "SELECT * FROM tableA";
-    $sql2 = "SELECT * FROM tableb";
-
     $result = $conn->query($sql);
     $result2 = $conn->query($sql2);
 
