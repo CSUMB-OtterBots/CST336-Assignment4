@@ -50,7 +50,7 @@ function insertInitial() {
 }
 
 function getData() {
-    insertInitial();
+    //insertInitial();
 
     print "<h1>Here is the data: </h1>";
 
