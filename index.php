@@ -6,7 +6,8 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-    <h1>GOT HERE</h1>
+    <div class="top_section"></div>
+    <div class="bottom_section"></div>
 </body>
 <script>
 
