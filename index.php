@@ -7,7 +7,7 @@
 </head>
 <body onload="getRows();">
     <div class="top_section">
-
+        <button onclick="getRows()">Refresh</button>
     </div>
     <div id="bottom_section" class="bottom_section">
 
