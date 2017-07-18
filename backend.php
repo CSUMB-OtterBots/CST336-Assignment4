@@ -67,14 +67,14 @@ function getData() {
     print "<h2>Table A: </h2>";
     if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
-            print "<p>" . $row['name'] . "\t" . $row['director'] . "\t" . $row['genre'] . "\t" . $row['rating'] . "\n" . "<\p>";
+            print "<p>" . $row['name'] . "\t" . $row['director'] . "\t" . $row['genre'] . "\t" . $row['rating'] . "\n" . "</p>";
         }
     }
 
     print "<h2>Table B: </h2>";
     if ($result2->num_rows > 0) {
         while($row = $result2->fetch_assoc()) {
-            print "<p>" . $row['name'] . "\t" . $row['director'] . "\t" . $row['genre'] . "\t" . $row['rating'] . "\n" . "<\p>";
+            print "<p>" . $row['name'] . "\t" . $row['director'] . "\t" . $row['genre'] . "\t" . $row['rating'] . "\n" . "</p>";
         }
     }
     $conn->close();
