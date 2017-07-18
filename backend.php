@@ -1,7 +1,6 @@
 <?php
 
 function insertInitial() {
-    print "<h1>Here is the data: </h1>";
 
     $conn = new mysqli("localhost", "root", "airpolo3", "CSTassignment4");
 
