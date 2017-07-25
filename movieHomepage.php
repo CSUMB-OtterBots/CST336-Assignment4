@@ -26,50 +26,60 @@ $genres = $stmt -> fetchAll();
 <head>
     <meta charset="UTF-8">
     <title>2016 Movies</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<h2>2016 Movie Suggestion Generator</h2>
-<form action="suggestionPage.php">
-    <table border="1" cellpadding="5px">
-        <tr>
-            <td>IMDB Score</td>
-            <td><select name="IMDBScore">
-                    <?php
-                    for ($i = 5; $i < 10; $i++)
-                    {
-                        echo "<option value='$i'>> $i</option>";
-                    }
-                    ?>
-                </select></td>
-        </tr>
-        <tr>
-            <td>MPAA Rating</td>
-            <td><select name="MPAARating">
-                    <?php
-                    foreach ($ratings as $rating)
-                    {
-                        echo "<option value=" . $rating['MPAAId'] . ">" . $rating['rating'] . "</option>";
-                    }
-                    ?>
-                </select></td>
-        </tr>
-        <tr>
-            <td>Genre</td>
-            <td><select name="genre">
-                    <?php
-                    foreach ($genres as $genre)
-                    {
-                        echo "<option value=" . $genre['genreId'] . ">" . $genre['genre'] . "</option>";
-                    }
-                    ?>
-                </select></td>
-        </tr>
-    </table>
-    <input type="submit" value="Suggest a Movie"/><br /><br />
-    <input type="button" value="See all Movies"/>
-</form>
-<?php
-$dbconn = null;
-?>
+<div class="background"><img src="background.jpg"></div>
+<div class="modal">
+    <h1>2016 Movie Suggestion Generator</h1>
+    <form action="suggestionPage.php">
+    <div class="modal_row">
+        <div class="modal_item">IMDB Score</div>
+        <div class="modal_item">
+            <select name="IMDBScore">
+                <?php
+                for ($i = 5; $i < 10; $i++)
+                {
+                    echo "<option value='$i'>> $i</option>";
+                }
+                ?>
+            </select>
+        </div>
+    </div>
+    <div class="modal_row">
+        <div class="modal_item">MPAA Rating</div>
+        <div class="modal_item">
+            <select name="MPAARating">
+                <?php
+                foreach ($ratings as $rating)
+                {
+                    echo "<option value=" . $rating['MPAAId'] . ">" . $rating['rating'] . "</option>";
+                }
+                ?>
+            </select>
+        </div>
+    </div>
+    <div class="modal_row">
+        <div class="modal_item">Genre</div>
+        <div class="modal_item">
+            <select name="genre">
+                <?php
+                foreach ($genres as $genre)
+                {
+                    echo "<option value=" . $genre['genreId'] . ">" . $genre['genre'] . "</option>";
+                }
+                ?>
+            </select>
+        </div>
+    </div>
+    <div class="modal_row">
+        <div class="modal_item"><input type="submit" value="Suggest a Movie"/></div>
+        <div class="modal_item"><input type="button" value="See all Movies"/></div>
+    </div>
+    </form>
+    <?php
+    $dbconn = null;
+    ?>
+</div>
 </body>
 </html>
