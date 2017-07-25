@@ -76,7 +76,7 @@ foreach ($movieMatches as $item)
 <form action="">
 <input type="button" value="more info" onclick="<?moreInfo()?>">
 <input type="button" value="another suggestion" onclick="<? suggestMovie()?>">
-<input type="button" value="change parameters" onclick="http://hosting.otterlabs.org/classes/maug5727/team_project/movieHomepage.php">
+<input type="button" value="change parameters" onclick="movieHomepage.php">
 </form>
 <?php
 $dbconn = null;
