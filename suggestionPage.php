@@ -24,15 +24,11 @@ $movieMatches = $stmt->fetchAll();
 
 function suggestMovie()
 {
-//    global $movieMatches;
-//    foreach ($movieMatches as $movie)
-//    {
-//        array_push($movieNameArray, $movie['movieName']);
-//    }
-//    foreach ($movieNameArray as $movie)
-//    {
-//        echo $movie;
-//    }
+    global $movieMatches;
+    $max = count($movieMatches) - 1;
+    $randIndex = rand(0, $max);
+    $movie = $movieMatches[$randIndex];
+    echo $movie;
 
 //    global $movieMatches;
 //    $max = count($movieMatches) - 1;
@@ -74,7 +70,7 @@ function moreInfo($movie)
 suggestMovie();
 foreach ($movieMatches as $item)
 {
-    echo $item['movieName'] . "---";
+    echo $item['movieName'] . " | ";
 }
 ?>
 <form action="">
