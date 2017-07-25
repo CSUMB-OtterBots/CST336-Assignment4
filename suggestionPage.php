@@ -13,36 +13,26 @@ $genre = $_GET['genre'];
 
 $sql = "SELECT *
             FROM movies
-            WHERE imdbRating >= :imdbRating
-                  && MPAAId = :MPAAId
-                  && genreId = :genreId
-            ORDER BY movieName ASC";
+            WHERE imdbRating >= :imdbRating &&
+                  MPAAId = :MPAAId &&
+                  genreId = :genreId";
 $stmt = $dbconn -> prepare($sql);
 $stmt -> execute(array(':imdbRating' => $IMDBScore,
                        ':MPAAId' => $MPAARating,
                        ':genreId' => $genre));
-$movieMatches = $stmt->fetch();
-
-//function isMovieName($item)
-//{
-//    if ($item)
-//}
+$movieMatches = $stmt->fetchAll();
 
 function suggestMovie()
 {
-    global $movieMatches;
-    $movieNameArray = array();
-    foreach ($movieMatches as $movieName)
-    {
-        if ($movieName['movieName'])
-        {
-            array_push($movieNameArray, $movieName);
-        }
-    }
-    foreach ($movieNameArray as $movieName)
-    {
-        echo $movieName;
-    }
+//    global $movieMatches;
+//    foreach ($movieMatches as $movie)
+//    {
+//        array_push($movieNameArray, $movie['movieName']);
+//    }
+//    foreach ($movieNameArray as $movie)
+//    {
+//        echo $movie;
+//    }
 
 //    global $movieMatches;
 //    $max = count($movieMatches) - 1;
@@ -51,8 +41,21 @@ function suggestMovie()
 //    return $suggestion;
 }
 
-function moreInfo()
+function moreInfo($movie)
 {
+//    $sql = "SELECT MPAAId, rating
+//        FROM MPAA_ratings
+//        ORDER BY MPAAId ASC";
+//    $stmt = $dbconn -> prepare($sql);
+//    $stmt -> execute();
+//    $ratings = $stmt -> fetchAll();
+//
+//    $sql = "SELECT genreId, genre
+//        FROM movie_genres
+//        ORDER BY genreId ASC";
+//    $stmt = $dbconn -> prepare($sql);
+//    $stmt -> execute();
+//    $genres = $stmt -> fetchAll();
     echo $movieInfo['movieDescription'] . "<br />";
     echo $movie['imdbRating'] . "<br />";
     echo $movie['rating'] . "<br />";
@@ -69,7 +72,10 @@ function moreInfo()
 <h2>2016 Movie Suggestion Generator</h2>
 <?php
 suggestMovie();
-//echo $movieMatches;
+foreach ($movieMatches as $item)
+{
+    echo $item['movieName'] . "---";
+}
 ?>
 <form action="">
 <input type="button" value="more info" onclick="<?moreInfo()?>">
