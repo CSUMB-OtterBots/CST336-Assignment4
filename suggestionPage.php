@@ -28,7 +28,7 @@ function suggestMovie()
     $max = count($movieMatches) - 1;
     $randIndex = rand(0, $max);
     $movie = $movieMatches[$randIndex];
-    echo $movie;
+    echo $movie['movieName'] . "<br />";
 
 //    global $movieMatches;
 //    $max = count($movieMatches) - 1;
