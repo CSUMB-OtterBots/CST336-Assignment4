@@ -29,7 +29,7 @@ $genres = $stmt -> fetchAll();
 </head>
 <body>
 <h2>2016 Movie Suggestion Generator</h2>
-<form action="http://hosting.otterlabs.org/classes/maug5727/team_project/suggestionPage.php">
+<form action="suggestionPage.php">
     <table border="1" cellpadding="5px">
         <tr>
             <td>IMDB Score</td>
