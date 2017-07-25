@@ -74,8 +74,10 @@ $genres = $stmt -> fetchAll();
     </div>
     <div class="modal_row">
         <div class="modal_item"><input type="submit" value="Suggest a Movie"/></div>
-        <div class="modal_item"><input type="button" value="See all Movies"/></div>
     </div>
+    </form>
+    <form action="AllMovies.php">
+        <div class="modal_item"><input type="submit" value="See all Movies"/></div>
     </form>
     <?php
     $dbconn = null;

@@ -63,14 +63,21 @@ function moreInfo($movie)
 <body>
 <h2>2016 Movie Suggestion Generator</h2>
 <?php
-$movie = suggestMovie();
-echo $movie['movieName'] . "<br />";
-moreInfo($movie);
+if (count($movieMatches) == 0)
+{
+    echo "No Matches <br />";
+}
+else
+{
+    $movie = suggestMovie();
+    echo $movie['movieName'] . "<br />";
+}
 ?>
-<form action="">
-<input type="button" value="more info" onclick="<?moreInfo($movie)?>">
-<input type="button" value="another suggestion" onclick="<? suggestMovie()?>">
-<input type="button" value="change parameters" onclick="movieHomepage.php">
+<form>
+    <input type="button" value="more info">
+</form>
+<form action="movieHomepage.php">
+    <input type="submit" value="change parameters" formaction="movieHomepage.php">
 </form>
 <?php
 $dbconn = null;
