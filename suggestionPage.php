@@ -68,10 +68,6 @@ function moreInfo($movie)
 <h2>2016 Movie Suggestion Generator</h2>
 <?php
 suggestMovie();
-foreach ($movieMatches as $item)
-{
-    echo $item['movieName'] . " | ";
-}
 ?>
 <form action="">
 <input type="button" value="more info" onclick="<?moreInfo()?>">
