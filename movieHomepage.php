@@ -8,10 +8,6 @@ header("Location: login.php");
 echo "Welcome " . $_SESSION['name'];
 ?>
 
-<form method="post" action="logout.php" onsubmit="confirmLogout()">
-<input type="submit" value="Logout" />
-</form>
-
 <?php
 require 'db_connection.php';
 global $dbconn;
