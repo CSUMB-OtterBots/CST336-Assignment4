@@ -1,11 +1,20 @@
 <?php
-$host = "localhost";
-$dbname = "maug5727";
-$username = "maug5727";
-$password = "Tranetrane1!!";
+session_start();
 
-$dbconn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-$dbconn -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+if(!isset($_SESSION['username'])){
+header("Location: login.php");
+}
+
+echo "Welcome " . $_SESSION['name'];
+?>
+
+<form method="post" action="logout.php" onsubmit="confirmLogout()">
+<input type="submit" value="Logout" />
+</form>
+
+<?php
+require 'db_connection.php';
+global $dbconn;
 
 $sql = "SELECT MPAAId, rating
         FROM MPAA_ratings
@@ -27,6 +36,14 @@ $genres = $stmt -> fetchAll();
     <meta charset="UTF-8">
     <title>2016 Movies</title>
     <link rel="stylesheet" href="styles.css">
+<script>
+    function confirmLogout(event) {
+    var logout = confirm("Do you really want to log out?");
+    if (!logout) {
+    event.preventDefault();
+    }
+    }
+    </script>
 </head>
 <body>
 <div class="background"><img src="background.jpg"></div>
