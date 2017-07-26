@@ -95,6 +95,9 @@ $genres = $stmt -> fetchAll();
     <form method="post" action="logout.php" onsubmit="confirmLogout()">
         <div class="modal_item"><input type="submit" value="Logout" /></div>
     </form>
+    <form method="post" action="changePassword.php">
+        <div class="modal_item"><input type="submit" value="Change Password" ></div>
+    </form>
     <?php
     $dbconn = null;
     ?>
