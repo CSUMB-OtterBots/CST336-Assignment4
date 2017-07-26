@@ -10,7 +10,7 @@ lastname varchar (50),
 username varchar (50) NOT NULL,
 password varchar (50) NOT NULL)";
 
-$stmt = $dbConn -> prepare($sql);
+$stmt = $dbconn -> prepare($sql);
 $stmt -> execute();
 
 $sql = "INSERT INTO movie_admin

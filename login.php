@@ -10,7 +10,7 @@ FROM movie_admin
 WHERE username = :username
 AND password = :password";
 
-$stmt = $dbConn -> prepare($sql);
+$stmt = $dbconn -> prepare($sql);
 $stmt -> execute(array(":username" => $_POST['username'], ":password" => hash("sha1", $_POST['password'])));
 
 $record = $stmt -> fetch();
