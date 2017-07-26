@@ -1,11 +1,5 @@
 <?php
-$host = "localhost";
-$dbname = "maug5727";
-$username = "maug5727";
-$password = "Tranetrane1!!";
-
-$dbconn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-$dbconn -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+require 'db_connection.php';
 
 $sql = "SELECT *
         FROM movies
