@@ -14,6 +14,15 @@ $stmt = $dbconn -> prepare($sql);
 $stmt -> execute();
 $movies = $stmt -> fetchAll();
 
+if (isset($_POST['addReview']))
+{
+    $sql = "INSERT INTO movie_reviews (reviews)
+            VALUE (:review)";
+    $stmt = $dbconn -> prepare($sql);
+    $stmt -> execute(array (":review" => $_POST['review']));
+    echo "Review was added!";
+}
+
 function ratedSort()
 {
     global $movies;
@@ -126,6 +135,12 @@ else
     }
 }
 ?>
+<br />
+<form method="post">
+    Write a review!<br />
+    <textarea name="review" rows="15" cols="60"></textarea><br />
+    <input type="submit" value="submit review" name="addReview">
+</form>
 <?php
 $dbconn = null;
 ?>
