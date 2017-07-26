@@ -4,8 +4,6 @@ session_start();
 if(!isset($_SESSION['username'])){
 header("Location: login.php");
 }
-
-echo "Welcome " . $_SESSION['name'];
 ?>
 
 <?php
@@ -42,7 +40,14 @@ $genres = $stmt -> fetchAll();
     </script>
 </head>
 <body>
-<div class="background"><img src="background.jpg"></div>
+<div class="background"><img src="background.jpg">
+	<h3><span>
+  <?php
+  echo "Welcome " . $_SESSION['name'];
+   ?>
+</span></h3>
+
+</div>
 <div class="modal">
     <h1>2016 Movie Suggestion Generator</h1>
     <form action="suggestionPage.php">
