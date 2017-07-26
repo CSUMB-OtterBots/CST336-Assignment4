@@ -96,6 +96,9 @@ $genres = $stmt -> fetchAll();
     <form action="AllMovies.php">
         <div class="modal_item"><input type="submit" value="See all Movies"/></div>
     </form>
+    <form method="post" action="logout.php" onsubmit="confirmLogout()">
+        <input type="submit" value="Logout" />
+    </form>
     <?php
     $dbconn = null;
     ?>
