@@ -1,4 +1,5 @@
 <?php
+
 $host = "localhost";
 $dbname = "maug5727";
 $username = "maug5727";
@@ -11,9 +12,7 @@ $IMDBScore = $_GET['IMDBScore'];
 $MPAARating = $_GET['MPAARating'];
 $genre = $_GET['genre'];
 
-$sql = "SELECT *
-            FROM movies
-            WHERE imdbRating >= :imdbRating &&
+$sql = "SELECT * FROM movies WHERE imdbRating >= :imdbRating &&
                   MPAAId = :MPAAId &&
                   genreId = :genreId";
 $stmt = $dbconn -> prepare($sql);
@@ -48,10 +47,19 @@ function moreInfo($movie)
     $stmt -> execute(array (':movieId' => $movie['movieId']));
     $description = $stmt->fetch();
 
-    echo $rating['rating'] . "<br />";
-    echo "IMDb Rating " . $movie['imdbRating'] . "/10" . "<br />";
-    echo $description['movieDescription'] . "<br />";
-    echo $movie['duration'] . " min." . "<br />";
+    print "<h2 style=\"color:red\">" .$movie['movieName'] . "</h2>";
+
+    print "<div id=\"modal_background\" class=\"modal_background\" onclick=\"closeModal()\">";
+    print "<div class=\"modal\">";
+
+    print "<div id=\"INFO_rating\"><p>RATING:" . $rating['rating'] . "</p></div>";
+    print "<div id=\"INFO_description\"><p>Description:" . $description['movieDescription'] . "</p></div>";
+    print "<div id=\"INFO_duration\"><p>Duration:" . $movie['duration'] . "</p></div>";
+
+    print "</div>"; // end modal
+    print "</div>"; // end modal background
+
+    print "<div id=\"infoButton\" onclick=\"openModal()\">More Info</div>";
 }
 ?>
 <!DOCTYPE html>
@@ -59,7 +67,17 @@ function moreInfo($movie)
 <head>
     <meta charset="UTF-8">
     <title>2016 Movies</title>
+    <link rel="stylesheet" href="suggestionStyles.css">
 </head>
+<script>
+    function openModal() {
+        document.getElementById('modal_background').visible = true;
+    }
+
+    function closeModal() {
+        document.getElementById('modal_background').visible = false;
+    }
+</script>
 <body>
 <h2>2016 Movie Suggestion Generator</h2>
 <?php
@@ -70,17 +88,25 @@ if (count($movieMatches) == 0)
 else
 {
     $movie = suggestMovie();
-    echo $movie['movieName'] . "<br />";
+    if($movie != "") {
+        moreInfo($movie);
+    }
 }
 ?>
-<form>
-    <input type="button" value="more info">
-</form>
 <form action="movieHomepage.php">
     <input type="submit" value="change parameters" formaction="movieHomepage.php">
 </form>
 <?php
 $dbconn = null;
 ?>
+<script>
+    function openModal() {
+        document.getElementById('modal_background').style.visibility = "visible";
+    }
+
+    function closeModal() {
+        document.getElementById('modal_background').style.visibility = "hidden";
+    }
+</script>
 </body>
 </html>
