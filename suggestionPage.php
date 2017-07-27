@@ -47,14 +47,14 @@ function moreInfo($movie)
     $stmt -> execute(array (':movieId' => $movie['movieId']));
     $description = $stmt->fetch();
 
-    print "<h2 style=\"color:red\">" .$movie['movieName'] . "</h2>";
+    echo " <div class=\"modal_item\"><h1 style=\"color:red\">" .$movie['movieName'] . "</h1></div>";
 
     print "<div id=\"modal_background\" class=\"modal_background\" onclick=\"closeModal()\">";
     print "<div class=\"modal\">";
 
-    print "<div id=\"INFO_rating\"><p>RATING:" . $rating['rating'] . "</p></div>";
-    print "<div id=\"INFO_description\"><p>Description:" . $description['movieDescription'] . "</p></div>";
-    print "<div id=\"INFO_duration\"><p>Duration:" . $movie['duration'] . "</p></div>";
+    print "<div id=\"INFO_rating\"><p>RATING: " . $rating['rating'] . "</p></div>";
+    print "<div id=\"INFO_description\"><p>Description: " . $description['movieDescription'] . "</p></div>";
+    print "<div id=\"INFO_duration\"><p>Duration: " . $movie['duration'] . " minutes</p></div>";
 
     print "</div>"; // end modal
     print "</div>"; // end modal background
@@ -68,6 +68,7 @@ function moreInfo($movie)
     <meta charset="UTF-8">
     <title>2016 Movies</title>
     <link rel="stylesheet" href="suggestionStyles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <script>
     function openModal() {
@@ -79,23 +80,27 @@ function moreInfo($movie)
     }
 </script>
 <body>
-<h2>2016 Movie Suggestion Generator</h2>
-<?php
-if (count($movieMatches) == 0)
-{
-    echo "No Matches <br />";
-}
-else
-{
-    $movie = suggestMovie();
-    if($movie != "") {
-        moreInfo($movie);
+<div class="background"><img src="movieCollage.jpg"></div>
+<div class="modal">
+    <?php
+    if (count($movieMatches) == 0)
+    {
+        echo "No Matches <br />";
     }
-}
-?>
-<form action="movieHomepage.php">
-    <input type="submit" value="change parameters" formaction="movieHomepage.php">
-</form>
+    else
+    {
+        $movie = suggestMovie();
+        if($movie != "") {
+            moreInfo($movie);
+        }
+    }
+    ?>
+    <div class="modal_row">
+    <form action="movieHomepage.php">
+        <div class="modal_item"><input type="submit" value="change parameters" formaction="movieHomepage.php"></div>
+    </form>
+    </div>
+</div>
 <?php
 $dbconn = null;
 ?>
